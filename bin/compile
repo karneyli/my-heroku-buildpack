@@ -19,5 +19,9 @@ indent "CACHE_DIR=#{CACHE_DIR}"
 indent "ENV_DIR=#{ENV_DIR.inspect}"
 
 indent "Contents of ENV_DIR are:"
-Dir.foreach(ENV_DIR) { |x| indent x }
+Dir.foreach(ENV_DIR) do |key|
+  Dir.foreach(File.join(ENV_DIR, key)) do |e|
+    indent "#{key}=#{e}"
+  end
+end
 indent "Done!"
