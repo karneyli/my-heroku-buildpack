@@ -14,3 +14,6 @@ CACHE_DIR=ARGV[1]
 ENV_DIR=ARGV[2]
 
 indent "LD_LIBRARY_PATH=#{ENV['LD_LIBRARY_PATH']}"
+indent "BUILD_DIR=#{BUILD_DIR}"
+indent "CACHE_DIR=#{CACHE_DIR}"
+indent "ENV_DIR=#{ENV_DIR.inspect}"
