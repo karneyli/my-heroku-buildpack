@@ -20,8 +20,8 @@ indent "ENV_DIR=#{ENV_DIR.inspect}"
 
 indent "Contents of ENV_DIR are:"
 Dir.foreach(ENV_DIR) do |key|
-  Dir.foreach(File.join(ENV_DIR, key)) do |e|
-    indent "#{key}=#{e}"
-  end
+  filename = File.join(ENV_DIR, key)
+  value = `cat #{filename}`
+  indent "#{key}=#{value}"
 end
 indent "Done!"
