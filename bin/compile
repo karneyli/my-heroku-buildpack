@@ -1,0 +1,16 @@
+#!/usr/bin/env ruby
+
+require 'tempfile'
+require 'fileutils'
+
+$stdout.sync = true
+
+def indent msg
+  puts "       #{msg}"
+end
+
+BUILD_DIR=ARGV[0]
+CACHE_DIR=ARGV[1]
+ENV_DIR=ARGV[2]
+
+indent "LD_LIBRARY_PATH=#{ENV['LD_LIBRARY_PATH']}"
